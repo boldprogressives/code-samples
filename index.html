@@ -3,92 +3,90 @@ layout: base
 ---
 <div class="row">
   <div class="large-12">
-    <h2>Radio Buttons and Checkboxes</h2>
+    <h2>Checkboxes</h2>
     
     <p>Take a look at a standard radio/checkbox code. You can break it down into three sections.</p>
     
     <code>
-    &lt;input type="radio" name="action_syria_usaction" value="yes" id="usaction_yes" /&gt;
-    &lt;label for="usaction_yes"&gt;Yes&lt;/label&gt;
+    &lt;input type="checkbox" name="action_loves_ice_cream" value="true" id="ice-cream" /&gt; <br />
+    &lt;label for="ice-cream"&gt;I love ice cream&lt;/label&gt;<br />
+    <br />
+    &lt;input type="checkbox" name="action_loves_pie" value="true" id="pie" /&gt;<br />
+    &lt;label for="ice-cream"&gt;I love pie&lt;/label&gt;   <br />
+    </code><br />
     
-    &lt;input type="radio" name="action_syria_usaction" value="yes" id="usaction_yes" /&gt;
-    &lt;label for="usaction_yes"&gt;Yes&lt;/label&gt;
-    </code>
-    
-    <p>Input type determines whether you are working with "radio"/radio buttons or "checkbox"/checkboxes.</p>
-    
-    <code>
-    &lt;input type="radio" name="action_syria_usaction" value="yes" id="usaction_yes" /&gt;
-    &lt;label for="usaction_yes"&gt;Yes&lt;/label&gt;
-    </code>
-    
-    <p>The "name" and the "value" are the parts of our code that get recorded into our database. Think of "name" as the question you're asking the member and "value" as the member's answer to the question.
+    <p>The "name" and the "value" are the parts of our code that get recorded into our database. Think of "name" as the question you're asking the member and "value" as the member's answer to the question. When you use checkboxes, a member can click as many as they want, and as long as they all have different "names" or different "values", they'll all be recorded safely in the database.
     </p>
     <p>To learn more about choosing a name, be sure to read the ActionKit/ActionFields Guidelines. (for example, names should ALWAYS start with the prefix action_; that's what tells the database it's time to start storing information.)
     </p>
-    <p>For questions where you want the member to only choose one answer ("Do you want ice cream? Yes, No, Maybe"), you should radio inputs with the same name. This ensures that a user can only select one option at a time. (But the different inputs still need distinct values, or else we won't know which one they picked!)
-    </p>
-    <p>
-    On the other hand, checkbox type inputs don't interact with one another, so a user can check as many as they want. For questions where you want the member to be able to choose multiple answers ("What topping do you want on the pizza? pineapple, pepperoni, tofu, mushrooms?"), you can use any distinct combinations of "name" and "value", but our usual approach is to use different "name"s and the value "true". There's some example code below.
+
+    <h2>Radio Buttons</h2>
+    
+    <p>For questions where you want the member to only choose one answer ("Do you want ice cream? Yes, No, Maybe"), you should use radio inputs with the same name. This ensures that a user can only select one option at a time. (But the different inputs still need distinct values, or else we won't know which one they picked!)
     </p>
     
     <code>
-    &lt;input type="radio" name="action_syria_usaction" value="yes" id="usaction_yes" /&gt;
-    &lt;label for="usaction_yes"&gt;Yes&lt;/label&gt;
-    </code>
+    &lt;input type="radio" name="action_syria_usaction" value="yes" id="usaction_yes" /&gt;<br />
+    &lt;label for="usaction_yes"&gt;Yes&lt;/label&gt;<br />
+    </code><br />
     
-    <p>The "id" and "label for" section makes it easier for our members to click on various options. For best practice, just squish together your "name" and "value" and make sure they're the same for "id' and "label for". So if &lt;name="great" value="job"&gt;, then "id" and "label for" would be "great_job". </p>
+    <p>Note for both checkboxes and radio buttons, the <code>id</code> and <code>label for</code> attributes make it easier for our members to click on the different options. For easy setup, just squish together your "name" and "value" and make sure they're the same for "id' and "label for". So if you have <code>&lt;input name="great" value="job" /&gt;</code>, then <code>id</code> and <code>label for</code> would be <code>great_job</code>. </p>
     
     <h2>Radio Buttons</h2>
     <p>Q: Do you want ice cream?</p>
     <code>
-    &lt;input type="radio" name="action_icecream" value="yes" id="icecream_yes" /&gt;
-    &lt;label for="icecream_yes"&gt;Yes&lt;/label&gt;
+    &lt;input type="radio" name="action_icecream" value="yes" id="icecream_yes" /&gt;<br />
+    &lt;label for="icecream_yes"&gt;Yes&lt;/label&gt;<br />
+    <br />
+    &lt;input type="radio" name="action_icecream" value="no" id="icecream_no" /&gt;<br />
+    &lt;label for="icecream_no"&gt;No&lt;/label&gt;<br />
+    <br />
+    &lt;input type="radio" name="action_icecream" value="na" id="icecream_na" /&gt;<br />
+    &lt;label for="icecream_na"&gt;I don't know.&lt;/label&gt;<br />
+    </code><br />
     
-    &lt;input type="radio" name="action_icecream" value="no" id="icecream_no" /&gt;
-    &lt;label for="icecream_no"&gt;No&lt;/label&gt;
-    
-    &lt;input type="radio" name="action_icecream" value="na" id="icecream_na" /&gt;
-    &lt;label for="icecream_na"&gt;I don't know.&lt;/label&gt;
-    </code>
     <h2>Checkboxes</h2>
     <p>Q: What kind of pizza toppings do you want to have on the pizza?</p>
     <code>
-    &lt;input type="checkbox" name="action_pizza_topping" value="pineapple" id="pizza_topping_pineapple" /&gt;
-    &lt;label for="pizza_topping_pineapple"&gt;Pineapple&lt;/label&gt;
-    
-    &lt;input type="checkbox" name="action_pizza_topping" value="pepperoni" id="pizza_topping_pepperoni" /&gt;
-    &lt;label for="pizza_topping_pepperoni"&gt;Pepperoni&lt;/label&gt;
-    
-    &lt;input type="checkbox" name="action_pizza_topping" value="tofu" id="pizza_topping_tofu" /&gt;
-    &lt;label for="pizza_topping_tofu"&gt;Tofu&lt;/label&gt;
-    
-    &lt;input type="checkbox" name="action_pizza_topping" value="mushrooms" id="pizza_topping_mushrooms" /&gt;
-    &lt;label for="pizza_topping_mushrooms"&gt;Mushrooms&lt;/label&gt;
-    </code>
+    &lt;input type="checkbox" name="action_pizza_topping" value="pineapple" id="pizza_topping_pineapple" /&gt;<br />
+    &lt;label for="pizza_topping_pineapple"&gt;Pineapple&lt;/label&gt;<br />
+    <br />
+    &lt;input type="checkbox" name="action_pizza_topping" value="pepperoni" id="pizza_topping_pepperoni" /&gt;<br />
+    &lt;label for="pizza_topping_pepperoni"&gt;Pepperoni&lt;/label&gt;<br />
+    <br />
+    &lt;input type="checkbox" name="action_pizza_topping" value="tofu" id="pizza_topping_tofu" /&gt;<br />
+    &lt;label for="pizza_topping_tofu"&gt;Tofu&lt;/label&gt;<br />
+    <br />
+    &lt;input type="checkbox" name="action_pizza_topping" value="mushrooms" id="pizza_topping_mushrooms" /&gt;<br />
+    &lt;label for="pizza_topping_mushrooms"&gt;Mushrooms&lt;/label&gt;<br />
+    </code><br />
     
     <h2>Text</h2>
     <p>For this option, you can just copy and paste the below code and make the appropriate "name".</p>
     <code>
-    &lt;textarea name="action_choose_a_name" rows="1" cols="15"&gt;Type your opinion&lt;/textarea&gt;
-    </code>
+    &lt;textarea name="action_choose_a_name" rows="1" cols="15"&gt;Type your opinion&lt;/textarea&gt;<br />
+    </code><br />
+    
     <h2>Hidden option</h2>
     <p>To create a hidden option, include the onClick in the &lt;label&gt; section of your code. Make sure that it matches to a &lt;div&gt;&lt;/div&gt; where you will put the dropdown content. See below for code.</p>
     
     <code>
-    &lt;input type="radio" name="action_icecream" value="na" id="icecream_na" onClick="$('.hiddenoption_name_goes_here-div').toggle(500);"/&gt;
-    &lt;label for="icecream_na" &gt;I don't know.&lt;/label&gt;
-    
-    &lt;div class="hiddenoption_name_goes_here-div" style="display:none; /"&gt;
-    Put your hidden option content here.
-    &lt;/div&gt;
-    </code>
+    &lt;input type="radio" name="action_icecream" value="na" id="icecream_na" onClick="$('.hiddenoption_name_goes_here-div').toggle(500);"/&gt;<br />
+    &lt;label for="icecream_na" &gt;I don't know.&lt;/label&gt;<br />
+    <br />
+    &lt;div class="hiddenoption_name_goes_here-div" style="display:none; /"&gt;<br />
+    Put your hidden option content here.<br />
+    &lt;/div&gt;<br />
+    </code><br />
     
     <h2>Page A/B</h2>
     <p>You can read more on A/B tests here. Below is just a simple example of how to set up one on the page. Check out the HTML view of the introduction text in Step 2 of the sample page.</p>
     <code>
-    &lt;div class="ab ab-name=test ab-version=yes default"&gt;&lt;p&gt;This is A/B test option yes. Look at this cat! &lt;img src="http://i397.photobucket.com/albums/pp51/ls_yung/bth_cat.gif" align="center"&gt;&lt;/p&gt;&lt;/div&gt;
-    &lt;div class="ab ab-name=test ab-version=no"&gt;&lt;p&gt;This is A/B test option no. There's no cat, but there's this awesome video!&lt;a href="http://www.youtube.com/watch?v=wR1L51_bEbk"&gt;http://www.youtube.com/watch?v=wR1L51_bEbk&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;
-    </code>
+    &lt;div class="ab ab-name=test ab-version=yes default"&gt;&lt;p&gt;<br />
+    This is A/B test option yes. Look at this cat!<br />
+    &lt;img src="http://i397.photobucket.com/albums/pp51/ls_yung/bth_cat.gif" align="center"&gt;&lt;/p&gt;&lt;/div&gt;<br />
+    &lt;div class="ab ab-name=test ab-version=no"&gt;&lt;p&gt;This is A/B test option no. There's no cat, but there's this awesome video!<br />
+    &lt;a href="http://www.youtube.com/watch?v=wR1L51_bEbk"&gt;http://www.youtube.com/watch?v=wR1L51_bEbk&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;<br />
+    </code><br />
   </div>
 </div>
